@@ -32,6 +32,15 @@ function createDefaultMap(width: number, height: number): RPGMap {
     const dataSize = width * height * 6;
     const data = new Array(dataSize).fill(0);
 
+    // Fill ground layer (layer 0) with default grass tile (2816 = World_A2 grass)
+    const groundTileId = 2816;
+    for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+            const index = (y * width + x);
+            data[index] = groundTileId;
+        }
+    }
+
     return {
         displayName: "",
         tilesetId: 1,
