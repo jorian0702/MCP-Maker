@@ -26,6 +26,7 @@ import { registerProjectTools } from "./tools/projectTools.js";
 import { registerTileTools } from "./tools/tileTools.js";
 import { registerCreateProjectTools } from "./tools/createProjectTools.js";
 import { registerScenarioTools } from "./tools/scenarioTools.js";
+import { registerSmartCreateTools } from "./tools/smartCreateTools.js";
 
 // Get configuration from environment variables
 const projectPath = process.env.RPGMAKER_PROJECT_PATH;
@@ -66,6 +67,7 @@ registerProjectTools(server, fileHandler);
 registerTileTools(server, fileHandler, safeWriter);
 registerCreateProjectTools(server, fileHandler, safeWriter);
 registerScenarioTools(server, fileHandler, safeWriter);
+registerSmartCreateTools(server, fileHandler, safeWriter);
 
 // Start server with stdio transport
 async function main() {
