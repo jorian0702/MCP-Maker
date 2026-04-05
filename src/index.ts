@@ -20,6 +20,10 @@ import { registerEnemyTools } from "./tools/enemyTools.js";
 import { registerArmorTools } from "./tools/armorTools.js";
 import { registerActorTools } from "./tools/actorTools.js";
 import { registerClassTools } from "./tools/classTools.js";
+import { registerEventTools } from "./tools/eventTools.js";
+import { registerSearchTools } from "./tools/searchTools.js";
+import { registerProjectTools } from "./tools/projectTools.js";
+import { registerTileTools } from "./tools/tileTools.js";
 
 // Get configuration from environment variables
 const projectPath = process.env.RPGMAKER_PROJECT_PATH;
@@ -54,6 +58,10 @@ registerEnemyTools(server, fileHandler, safeWriter);
 registerArmorTools(server, fileHandler, safeWriter);
 registerActorTools(server, fileHandler, safeWriter);
 registerClassTools(server, fileHandler, safeWriter);
+registerEventTools(server, fileHandler, safeWriter);
+registerSearchTools(server, fileHandler);
+registerProjectTools(server, fileHandler);
+registerTileTools(server, fileHandler, safeWriter);
 
 // Start server with stdio transport
 async function main() {
